@@ -1,21 +1,21 @@
 export function counter(num = 0) {
-  const func1 = () => {
+  const getNum = () => {
     return num;
   };
-  const func2 = () => {
+  const incrementNum = () => {
     num += 1;
   };
-  return [func1, func2];
+  return [getNum, incrementNum];
 }
 
 const [getA, nextA] = counter(1);
-console.log(getA()); // 1
+getA(); // 1
 nextA();
-console.log(getA()); // 2
+getA(); // 2
 const [getB, nextB] = counter(10);
 nextB();
-console.log(getA()); // 2
-console.log(getB()); // 11
+getA(); // 2
+getB(); // 11
 nextA();
-console.log(getA()); // 3
-console.log(getB()); // 11
+getA(); // 3
+getB(); // 11
